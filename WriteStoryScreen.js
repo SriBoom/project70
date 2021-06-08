@@ -26,6 +26,8 @@ export default class TransactionScreen extends React.Component {
             />
             <TextInput
             style={styles.inputBox}
+            placeholder="Write your title here"
+            placeholderTextColor="black"
             onChangeText={title => {
                 this.setState({ title: title });
               }}
@@ -34,6 +36,8 @@ export default class TransactionScreen extends React.Component {
 
             <TextInput
             style={styles.inputBox}
+            placeholder="Write your name here"
+            placeholderTextColor="black"
             onChangeText={author=>{
                 this.setState({author:author});
             }}
@@ -42,12 +46,13 @@ export default class TransactionScreen extends React.Component {
 
             <TextInput
             style={styles.inputBox}
-            multiline
+            placeholder="Write your story here"
+            placeholderTextColor="black"
             onChangeText={story=>{
-                this.setState({story:stroy});
+                this.setState({story:story});
             }}
             value={this.state.story}
-            />
+            multiline={true}/>
 
             <TouchableOpacity 
             style={styles.submitButton}
@@ -64,27 +69,28 @@ export default class TransactionScreen extends React.Component {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
+      backgroundColor: '#fff',
     },
     inputBox: { 
-        width: 200,
-        height: 40,
-        borderWidth: 1.5,
-        borderRightWidth: 0,
-        fontSize: 20
+      height: 40,
+      borderWidth: 2,
+      marginTop: 40,
+      margin: 10,
+      color:'black',
+      padding: 6,
     }, 
     submitButton:{
-        backgroundColor: '#FBC02D',
-      width: 100,
-      height:50
+      justifyContent: 'center',
+      alignSelf: 'center',
+      backgroundColor: 'pink',
+      width: 80,
+      height: 40,color:'black',
     },
     submitButtonText:{
-        padding: 10,
       textAlign: 'center',
-      fontSize: 20,
-      fontWeight:"bold",
-      color: 'black'
+      color: 'white',
+      fontWeight: 'bold',
+      color:'black',
     }
   });
     
